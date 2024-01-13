@@ -1,3 +1,5 @@
+#include "reduction.hpp"
+
 #include <benchmark/benchmark.h>
 
 static void BM_SomeFunction(benchmark::State& state) {
