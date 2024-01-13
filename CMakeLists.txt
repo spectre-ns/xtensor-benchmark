@@ -34,8 +34,8 @@ else()
 endif()
 find_package(benchmark REQUIRED)
 
-OPTION(XTENSOR_BUILD_TESTS "Build tests for native algorithms" OFF)
-OPTION(XTENSOR_BUILD_BENCHMARK "Build benchmarks" OFF)
+OPTION(BUILD_TESTS "Build tests for native algorithms" OFF)
+OPTION(BUILD_BENCHMARK "Build benchmarks" OFF)
 
 add_subdirectory(source)
 
