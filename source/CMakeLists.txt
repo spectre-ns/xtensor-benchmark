@@ -1,6 +1,6 @@
 
 
-if(BUILD_BENCHMARK)
+if(BUILD_BENCHMARKS)
     add_subdirectory(benchmarks)
 endif()
 
