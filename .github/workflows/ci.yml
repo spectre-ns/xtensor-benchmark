@@ -105,7 +105,7 @@ jobs:
       run: cmake -Bbuild -DBUILD_BENCHMARKS=ON
 
     - name: Build
-      working-directory: build
+      working-directory: build/source/benchmarks
       run: cmake --build . --target xbenchmark 
   windows:
 
