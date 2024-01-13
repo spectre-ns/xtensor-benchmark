@@ -73,7 +73,7 @@ jobs:
 
     - name: Run
       working-directory: build
-      run: ls
+      run: xbenchmark
 
   macos:
 
