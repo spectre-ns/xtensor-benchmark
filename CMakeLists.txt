@@ -35,13 +35,7 @@ endif()
 
 find_package(benchmark REQUIRED)
 
-# Build
-# =====
-
-#add_subdirectory(benchmark)
-
-add_executable(xbenchmark main.cpp)
-target_link_libraries(xbenchmark PRIVATE benchmark::benchmark)
+add_subdirectory(benchmark)
 
 
 
