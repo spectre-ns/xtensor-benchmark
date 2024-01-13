@@ -102,11 +102,11 @@ jobs:
         cache-downloads: true
 
     - name: Configure using CMake
-      run: cmake -Bbuild
+      run: cmake -Bbuild -DBUILD_BENCHMARK=ON
 
     - name: Build
       working-directory: build
-      run: cmake --build . --target xbenchmark -DBUILD_BENCHMARK=ON
+      run: cmake --build . --target xbenchmark 
   windows:
 
     strategy:
@@ -149,7 +149,7 @@ jobs:
           ninja
 
     - name: Configure using CMake
-      run: cmake -Bbuild -DCMAKE_BUILD_TYPE:STRING=Release -G Ninja
+      run: cmake -Bbuild -DCMAKE_BUILD_TYPE:STRING=Release -DBUILD_BENCHMARK=ON -G Ninja
 
     - name: Build
       working-directory: build
