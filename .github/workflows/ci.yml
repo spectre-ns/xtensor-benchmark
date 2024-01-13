@@ -72,7 +72,7 @@ jobs:
       run: cmake --build . --target xbenchmark
 
     - name: Run
-      working-directory: build
+      working-directory: build/source/benchmarks
       run: ./xbenchmark
 
   macos:
@@ -105,7 +105,7 @@ jobs:
       run: cmake -Bbuild -DBUILD_BENCHMARKS=ON
 
     - name: Build
-      working-directory: build/source/benchmarks
+      working-directory: build
       run: cmake --build . --target xbenchmark 
   windows:
 
