@@ -19,7 +19,7 @@ enable_testing()
 
 add_executable(
   xtest
-  main.cpp
+  reduction.cpp
 )
 
 target_link_libraries(
