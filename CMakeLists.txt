@@ -35,7 +35,7 @@ endif()
 find_package(benchmark REQUIRED)
 
 OPTION(BUILD_TESTS "Build tests for native algorithms" OFF)
-OPTION(BUILD_BENCHMARK "Build benchmarks" OFF)
+OPTION(BUILD_BENCHMARKS "Build benchmarks" OFF)
 
 add_subdirectory(source)
 
