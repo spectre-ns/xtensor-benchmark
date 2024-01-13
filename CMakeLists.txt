@@ -32,10 +32,13 @@ else()
     find_package(xtensor ${xtensor_REQUIRED_VERSION} REQUIRED)
     message(STATUS "Found xtensor: ${xtensor_INCLUDE_DIRS}/xtensor")
 endif()
-
 find_package(benchmark REQUIRED)
 
-add_subdirectory(benchmark)
+OPTION(XTENSOR_BUILD_TESTS "Build tests for native algorithms" OFF)
+OPTION(XTENSOR_BUILD_BENCHMARK "Build benchmarks" OFF)
+
+add_subdirectory(source)
+
 
 
 
