@@ -106,7 +106,7 @@ jobs:
 
     - name: Build
       working-directory: build
-      run: cmake --build . --target xbenchmark
+      run: cmake --build . --target xbenchmark -DBUILD_BENCHMARK=ON
   windows:
 
     strategy:
