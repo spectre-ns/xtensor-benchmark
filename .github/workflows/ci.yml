@@ -65,7 +65,7 @@ jobs:
           ${{ (matrix.sys.name == 'tbb' || matrix.sys.name == 'xsimd-tbb' ) && 'tbb-devel' || '' }}
 
     - name: Configure using CMake
-      run: cmake -Bbuild
+      run: cmake -Bbuild -DBUILD_BENCHMARK=ON
       
     - name: Build
       working-directory: build
