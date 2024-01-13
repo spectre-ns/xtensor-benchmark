@@ -4,9 +4,7 @@ channels:
 dependencies:
 - cmake
 - xtl=0.7.5
-- xsimd=11.1.0
-- nlohmann_json
-- doctest=2.4.7
+- xsimd=10.0.0
 - pre-commit
-- xtensor
+- xtensor=0.24.7
 - benchmark

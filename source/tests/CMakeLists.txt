@@ -27,6 +27,11 @@ target_link_libraries(
   gtest_main
 )
 
+target_compile_definitions(xtest PRIVATE
+                               XTENSOR_USE_XSIMD
+                               XSIMD_ENABLE_XTL_COMPLEX)
+target_link_libraries(xtest xtensor xtensor::optimize xtensor::use_xsimd)
+target_link_libraries(xtest xsimd)
 target_include_directories(xtest PRIVATE ${XTENSOR_BENCHMARK_INCLUDE_DIR})
 include(GoogleTest)
 gtest_discover_tests(xtest)
