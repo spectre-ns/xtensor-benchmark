@@ -7,7 +7,7 @@ template<class T>
 static void native_mean(benchmark::State& state) {
   xt::xarray<T> input = xt::random::rand<T>({state.range(0),state.range(0),state.range(0)});
   for (auto _ : state) {
-    benchmark::DoNotOptimize(xt::mean(input, xt::evaluation_strategy::immediate)());
+    benchmark::DoNotOptimize(xt::mean(input));
   }
 }
 
