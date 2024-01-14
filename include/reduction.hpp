@@ -1,5 +1,6 @@
 
 
+#include <xtensor/xio.hpp>
 #include <xtensor/xarray.hpp>
 
 #include <numeric>
@@ -34,10 +35,10 @@ namespace reduction
         }
     
         template<class T>
-        auto Mean(const xt::xarray<T>& input)
+        auto mean(const xt::xarray<T>& input)
         {
             xt::xarray<T> output = xt::xarray<T>::from_shape(input.shape());
-            auto result = std::reduce(input.begin(), input.end(), 0) / input.size();
+            T result = std::reduce(input.begin(), input.end(), T{0}) / input.size();
             return result;
         }
     }
