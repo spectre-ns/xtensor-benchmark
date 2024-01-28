@@ -14,6 +14,7 @@ namespace reduction
         auto AverageSecondAxis(const xt::xarray<T>& input)
         {
             xt::xarray<T> output = xt::xarray<T>::from_shape({input.shape(0), input.shape(2)});
+            std::fill(output.begin(),output.end(), 0);
             const size_t firstAxis = input.shape(0);
             const size_t secondAxis = input.shape(1);
             const size_t lastAxis = input.shape(2);
@@ -38,7 +39,8 @@ namespace reduction
         auto mean(const xt::xarray<T>& input)
         {
             xt::xarray<T> output = xt::xarray<T>::from_shape(input.shape());
-            T result = std::accumulate(input.begin(), input.end(), T{0}) / input.size();
+            auto ptr = input.data();
+            T result = std::accumulate(ptr, ptr + input.size(), T{0}) / input.size();
             return result;
         }
     }
