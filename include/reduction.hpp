@@ -30,7 +30,7 @@ namespace reduction
                     }
                 }
             }
-            std::ranges::transform(output.begin(), output.end(), output.begin(), [&](auto value) { return value / secondAxis; });
+            std::transform(output.begin(), output.end(), output.begin(), [&](auto value) { return value / secondAxis; });
             return output;
         }
     
@@ -38,7 +38,7 @@ namespace reduction
         auto mean(const xt::xarray<T>& input)
         {
             xt::xarray<T> output = xt::xarray<T>::from_shape(input.shape());
-            T result = std::reduce(input.begin(), input.end(), T{0}) / input.size();
+            T result = std::accumulate(input.begin(), input.end(), T{0}) / input.size();
             return result;
         }
     }
